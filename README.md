@@ -1,4 +1,4 @@
-# ShootingGameforSDL
+# SDLShootingGame
  
 C++、SDLを使用したシューティングゲームです。
 VisualStudioでビルドするとプレイできます。
