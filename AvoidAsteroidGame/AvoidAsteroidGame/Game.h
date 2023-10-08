@@ -116,8 +116,8 @@ private:
 
 	float breakAsteroidsCount = 0.0f;
 	float getRepairItemsCount = 0.0f;
-	float asteroidPoint = 300.0f;
-	float repairItemPoint = 150.0f;
+	float asteroidPoint = 1500.0f;
+	float repairItemPoint = 3000.0f;
 
 	float tenScecond = 0.0f;
 	Mix_Chunk* soundEffectLaser = nullptr;

@@ -1,30 +1,23 @@
 ﻿  Actor.cpp
   Asteroid.cpp
-  BGSpriteComponent.cpp
-  CircleComponent.cpp
-  Component.cpp
   Game.cpp
-D:\個人用\ゲーム\Bandai\AvoidAsteroidGame\AvoidAsteroidGame\Ship.h(53,18): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-D:\個人用\ゲーム\Bandai\AvoidAsteroidGame\AvoidAsteroidGame\Game.cpp(495,11): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
-  InputComponent.cpp
+C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\AvoidAsteroidGame\Ship.h(53,18): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\AvoidAsteroidGame\Game.cpp(495,11): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
   Laser.cpp
   Main.cpp
-  Math.cpp
-  MoveComponent.cpp
-  Random.cpp
   RepairItem.cpp
   Ship.cpp
-D:\個人用\ゲーム\Bandai\AvoidAsteroidGame\AvoidAsteroidGame\Ship.h(53,18): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-D:\個人用\ゲーム\Bandai\AvoidAsteroidGame\AvoidAsteroidGame\Ship.cpp(72,12): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-D:\個人用\ゲーム\Bandai\AvoidAsteroidGame\AvoidAsteroidGame\Ship.cpp(116,15): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\AvoidAsteroidGame\Ship.h(53,18): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\AvoidAsteroidGame\Ship.cpp(72,12): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\AvoidAsteroidGame\Ship.cpp(116,15): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
   SpriteComponent.cpp
   コードを生成中...
-  AvoidAsteroidGame.vcxproj -> D:\個人用\ゲーム\Bandai\AvoidAsteroidGame\x64\Debug\AvoidAsteroidGame.exe
-  D:\個人用\ゲーム\Bandai\AvoidAsteroidGame\External\SDL2-2.28.3\lib\x64\SDL2.dll
+  AvoidAsteroidGame.vcxproj -> C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\x64\Debug\AvoidAsteroidGame.exe
+  C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\External\SDL2-2.28.3\lib\x64\SDL2.dll
   1 個のファイルをコピーしました
-  D:\個人用\ゲーム\Bandai\AvoidAsteroidGame\External\SDL2_image-2.6.3\lib\x64\SDL2_image.dll
+  C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\External\SDL2_image-2.6.3\lib\x64\SDL2_image.dll
   1 個のファイルをコピーしました
-  D:\個人用\ゲーム\Bandai\AvoidAsteroidGame\External\SDL2_ttf-2.20.2\lib\x64\SDL2_ttf.dll
+  C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\External\SDL2_ttf-2.20.2\lib\x64\SDL2_ttf.dll
   1 個のファイルをコピーしました
-  D:\個人用\ゲーム\Bandai\AvoidAsteroidGame\External\SDL2_mixer-2.6.3\lib\x64\SDL2_mixer.dll
+  C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\External\SDL2_mixer-2.6.3\lib\x64\SDL2_mixer.dll
   1 個のファイルをコピーしました
