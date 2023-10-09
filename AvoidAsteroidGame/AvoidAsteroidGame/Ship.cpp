@@ -227,7 +227,7 @@ void Ship::OnCollisionRepairItems()
 void Ship::SetDamageTex(float deltaTime)
 {
 	//0.2秒に一回フラグを切り替え
-	//tureならtextureにnullptr,falseなら従来の画像アドレスを代入
+	//tureならtextureに従来の画像アドレス,falseならnullptrを代入
 	countInterval += deltaTime;
 	if (countInterval >= 0.2 && showImage) {
 		showImage = false;

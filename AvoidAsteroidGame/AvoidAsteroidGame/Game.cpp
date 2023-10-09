@@ -80,13 +80,11 @@ bool Game::Initialize()
 		return false;
 	}
 
-	//タイトル画面になる画像や文字などを表示し、
-	// 特定の入力がなされるまで次の処理を待つコード
-	// 音楽を再生
+	//タイトル画面の描画と待機処理
 	PlayTitleMusic();
 	ShowTitle(mRenderer, font, windowWidth, windowHeight);
 	WaitLoop();
-	font = TTF_OpenFont(FONT_PATH, 30); // 24はフォントのサイズ
+	font = TTF_OpenFont(FONT_PATH, 30); 
 	ShowExplanation(mRenderer, font, windowWidth, windowHeight);
 	WaitLoop();
 	// BGMの解放
@@ -175,7 +173,7 @@ void Game::UpdateGame()
 	}
 
 	spawnRepairItemSpeed += deltaTime;
-	// 一定時間ごとにAsteroidを生成する
+	// 一定時間ごとにRepairItemを生成する
 	if (spawnRepairItemSpeed >= spawnRepairItemInterval)
 	{
 		SpawnRepairItem();
@@ -444,7 +442,7 @@ void Game::SpawnRepairItem()
 void Game::ShowTitle(SDL_Renderer* renderer, TTF_Font* font, int windowWidth, int windowHeight)
 {
 	// タイトル画面の背景色
-	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // 例: 黒色の背景
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); 
 
 	// タイトル画面に表示するテキスト
 	SDL_Color textColor = { 255, 255, 255, 255 }; // 白色のテキスト
@@ -495,7 +493,7 @@ void Game::ShowExplanation(SDL_Renderer* renderer, TTF_Font* font, int windowWid
 	int yPos = (windowHeight - explanationLines.size() * 20) / 2; // 各行の高さを適切に設定
 
 	// 各行を描画
-	SDL_Color textColor = { 255, 255, 255, 255 }; // 白色のテキスト
+	SDL_Color textColor = { 255, 255, 255, 255 }; 
 	for (const std::string& line : explanationLines) {
 		SDL_Surface* lineSurface = TTF_RenderUTF8_Blended(font, line.c_str(), textColor);
 
@@ -529,12 +527,10 @@ void Game::ShowExplanation(SDL_Renderer* renderer, TTF_Font* font, int windowWid
 
 void Game::ShowResult(SDL_Renderer* renderer, TTF_Font* font, int windowWidth, int windowHeight)
 {
-	// 背景色
-	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // 例: 黒色の背景
-
-	// 表示するテキスト
-	SDL_Color textColor = { 255, 255, 255, 255 }; // 白色のテキスト
-	SDL_Color bgColor = { 0, 0, 0, 0 }; // 背景色を透明に設定
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); 
+	
+	SDL_Color textColor = { 255, 255, 255, 255 }; 
+	SDL_Color bgColor = { 0, 0, 0, 0 }; 
 	std::string scoreText = "Game over! Your score is : " + std::to_string(static_cast<int>(score));
 	SDL_Surface* titleTextSurface = TTF_RenderUTF8_Blended(font, scoreText.c_str(), textColor);
 
@@ -545,7 +541,7 @@ void Game::ShowResult(SDL_Renderer* renderer, TTF_Font* font, int windowWidth, i
 	titleTextRect.w = titleTextSurface->w;
 	titleTextRect.h = titleTextSurface->h;
 
-	// タイトル画面を描画
+	// 画面を描画
 	SDL_RenderClear(renderer);
 	SDL_RenderCopy(renderer, SDL_CreateTextureFromSurface(renderer, titleTextSurface), NULL, &titleTextRect);
 
@@ -566,7 +562,7 @@ void Game::ShowResult(SDL_Renderer* renderer, TTF_Font* font, int windowWidth, i
 
 void Game::WaitLoop()
 {
-	// タイトル画面の表示待機
+	// 画面の表示待機
 	bool showInstructions = false;
 
 	while (!showInstructions) {
@@ -577,7 +573,7 @@ void Game::WaitLoop()
 				showInstructions = true; // ループを抜ける
 			}
 			else if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_RETURN) {
-				// スペースキーが押されたら次の処理へ
+				// エンターキーが押されたら次の処理へ
 				showInstructions = true; // ループを抜ける
 			}
 		}
@@ -588,7 +584,7 @@ void Game::RenderUI(SDL_Renderer* renderer)
 {
 	// フォントとテキストカラーを設定
 	TTF_Font* font = TTF_OpenFont(FONT_PATH, 30);
-	SDL_Color textColor = { 255, 255, 255, 255 }; // 白色のテキストカラー
+	SDL_Color textColor = { 255, 255, 255, 255 }; 
 
 	// 残弾数（n/10）を計算
 	int bullets = mShip->GetLaserNum();
@@ -598,11 +594,11 @@ void Game::RenderUI(SDL_Renderer* renderer)
 	int currentHP = mShip->GetmHealth();
 	int maxHP = mShip->GetMaxHealth();
 
-	// スコアを取得（仮の値）
-	int currentScore = static_cast<int>(score); // スコアを取得するコードを追加してください
+	// スコアを取得
+	int currentScore = static_cast<int>(score); 
 
-	// 経過時間を取得（仮の値、秒単位）
-	int elapsedTimeInSeconds = static_cast<int>(gameTime); // 経過時間を取得するコードを追加してください
+	// 経過時間を取得
+	int elapsedTimeInSeconds = static_cast<int>(gameTime); 
 
 	// テキストを作成
 	std::string bulletsText = std::to_string(bullets) + "/" + std::to_string(maxBullets);
@@ -611,13 +607,12 @@ void Game::RenderUI(SDL_Renderer* renderer)
 		bulletsText = "Reloading...";
 	}
 
-	// テキストのサーフェスを作成
 	SDL_Surface* textSurface = TTF_RenderUTF8_Blended(font, bulletsText.c_str(), textColor);
 
-	// テキストの描画位置を計算（画面上部中央）
+	// テキストの描画位置を計算
 	int textWidth = textSurface->w;
 	int xPos = (windowWidth - textWidth) / 4*1;
-	int yPos = 10; // 画面上部に表示
+	int yPos = 10;
 
 	// テキストを描画
 	SDL_Rect textRect;
@@ -633,18 +628,16 @@ void Game::RenderUI(SDL_Renderer* renderer)
 	SDL_FreeSurface(textSurface);
 	SDL_DestroyTexture(textTexture);
 
-	// テキストを作成（HP）
+	// HP表示処理
 	std::string hpText = "HP: " + std::to_string(currentHP) + " / " + std::to_string(maxHP);
 
-	// テキストのサーフェスを作成（HP）
 	SDL_Surface* hpTextSurface = TTF_RenderUTF8_Blended(font, hpText.c_str(), textColor);
 
-	// テキストの描画位置を計算（HP）
+
 	int hpTextWidth = hpTextSurface->w;
 	int hpXPos = 50;
-	int hpYPos = 10; // 残弾数の下に表示
+	int hpYPos = 10; 
 
-	// テキストを描画（HP）
 	SDL_Rect hpTextRect;
 	hpTextRect.x = hpXPos;
 	hpTextRect.y = hpYPos;
@@ -654,22 +647,18 @@ void Game::RenderUI(SDL_Renderer* renderer)
 	SDL_Texture* hpTextTexture = SDL_CreateTextureFromSurface(renderer, hpTextSurface);
 	SDL_RenderCopy(renderer, hpTextTexture, NULL, &hpTextRect);
 
-	// メモリの解放（HP）
 	SDL_FreeSurface(hpTextSurface);
 	SDL_DestroyTexture(hpTextTexture);
 
-	// テキストを作成（スコア）
 	std::string scoreText = "Score : " + std::to_string(currentScore);
 
-	// テキストのサーフェスを作成（スコア）
+	// スコア表示処理
 	SDL_Surface* scoreTextSurface = TTF_RenderUTF8_Blended(font, scoreText.c_str(), textColor);
 
-	// テキストの描画位置を計算（スコア）
 	int scoreTextWidth = scoreTextSurface->w;
 	int scoreXPos = (windowWidth - scoreTextWidth)-100;
 	int scoreYPos = 10; 
 
-	// テキストを描画（スコア）
 	SDL_Rect scoreTextRect;
 	scoreTextRect.x = scoreXPos;
 	scoreTextRect.y = scoreYPos;
@@ -679,22 +668,18 @@ void Game::RenderUI(SDL_Renderer* renderer)
 	SDL_Texture* scoreTextTexture = SDL_CreateTextureFromSurface(renderer, scoreTextSurface);
 	SDL_RenderCopy(renderer, scoreTextTexture, NULL, &scoreTextRect);
 
-	// メモリの解放（スコア）
 	SDL_FreeSurface(scoreTextSurface);
 	SDL_DestroyTexture(scoreTextTexture);
 
-	// テキストを作成（経過時間）
+	// 経過時間表示処理
 	std::string timeText = "Time : " + std::to_string(elapsedTimeInSeconds) + " seconds";
 
-	// テキストのサーフェスを作成（経過時間）
 	SDL_Surface* timeTextSurface = TTF_RenderUTF8_Blended(font, timeText.c_str(), textColor);
 
-	// テキストの描画位置を計算（経過時間）
 	int timeTextWidth = timeTextSurface->w;
 	int timeXPos = (windowWidth - timeTextWidth) / 2 +30;
 	int timeYPos = 10;
 
-	// テキストを描画（経過時間）
 	SDL_Rect timeTextRect;
 	timeTextRect.x = timeXPos;
 	timeTextRect.y = timeYPos;
@@ -704,11 +689,9 @@ void Game::RenderUI(SDL_Renderer* renderer)
 	SDL_Texture* timeTextTexture = SDL_CreateTextureFromSurface(renderer, timeTextSurface);
 	SDL_RenderCopy(renderer, timeTextTexture, NULL, &timeTextRect);
 
-	// メモリの解放（経過時間）
 	SDL_FreeSurface(timeTextSurface);
 	SDL_DestroyTexture(timeTextTexture);
 
-	// メモリの解放（フォント）
 	TTF_CloseFont(font);
 
 }

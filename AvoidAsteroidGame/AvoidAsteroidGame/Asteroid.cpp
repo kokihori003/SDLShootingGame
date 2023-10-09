@@ -17,7 +17,7 @@ Asteroid::Asteroid(Game* game)
 	Vector2 randPos = Random::GetVector(Vector2::Zero,
 		Vector2(1024.0f, 768.0f));
 
-	//Spawn positionをlaneの右端三か所に変更
+	//Spawn positionはlaneの右端三か所
 	laneNum = rand() % 3; //乱数で隕石を生成するレーンを決定
 	Vector2 pos = Vector2( 1000.0f, lane[laneNum] );
 	SetPosition(pos);
