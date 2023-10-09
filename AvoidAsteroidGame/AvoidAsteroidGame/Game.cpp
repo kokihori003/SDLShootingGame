@@ -157,7 +157,7 @@ void Game::UpdateGame()
 {
 	// Compute delta time
 	// Wait until 16ms has elapsed since last frame
-	while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 16))
+ 	while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 16))
 		;
 
 	float deltaTime = (SDL_GetTicks() - mTicksCount) / 1000.0f;
@@ -788,7 +788,7 @@ void Game::PlayRepairSE()
 
 void Game::PlayStartReload()
 {
-	Mix_FreeChunk(soundEffectRepair);
+	Mix_FreeChunk(soundEffectSReload);
 	// 効果音のロード 
 	soundEffectSReload = Mix_LoadWAV(SE_STARTRELOAD_PATH);
 	// 効果音を一度だけ再生
@@ -797,23 +797,9 @@ void Game::PlayStartReload()
 
 void Game::PlayEndReload()
 {
-	Mix_FreeChunk(soundEffectRepair);
+	Mix_FreeChunk(soundEffectEReload);
 	// 効果音のロード 
 	soundEffectEReload = Mix_LoadWAV(SE_ENDRELOAD_PATH);
 	// 効果音を一度だけ再生
 	Mix_PlayChannel(-1, soundEffectEReload, 0);
 }
-
-////効果音の定期的な開放
-//tenScecond += deltaTime;
-//if (tenScecond > 4.0f)
-//{
-//	// 効果音の解放（再生後に解放する）
-//	Mix_FreeChunk(soundEffectLaser);
-//	Mix_FreeChunk(soundEffectDamage);
-//	Mix_FreeChunk(soundEffectDestroy);
-//	Mix_FreeChunk(soundEffectRepair);
-//	Mix_FreeChunk(soundEffectSReload);
-//	Mix_FreeChunk(soundEffectEReload);
-//	tenScecond = 0.0f;
-//}
