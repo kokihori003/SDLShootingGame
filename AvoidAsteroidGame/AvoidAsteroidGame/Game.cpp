@@ -427,14 +427,14 @@ void Game::RemoveSprite(SpriteComponent* sprite)
 
 void Game::SpawnAsteroid()
 {
-	// Meteor オブジェクトを生成し、ゲームワールドに追加
+	// オブジェクトを生成し、ゲームワールドに追加
 	new Asteroid(this); 
 
 }
 
 void Game::SpawnRepairItem()
 {
-	// Meteor オブジェクトを生成し、ゲームワールドに追加
+	// オブジェクトを生成し、ゲームワールドに追加
 	new RepairItem(this);
 
 }
