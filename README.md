@@ -4,7 +4,6 @@ C++、SDLを使用したシューティングゲームです。
 VisualStudioでビルドするとプレイできます。  
 C++でのゲーム開発を学習中で、学習内容のアウトプットのために開発しています。
 
-
 # ゲームのルール
 
 * WASDで移動、スペースキーで攻撃ができます。
@@ -12,6 +11,14 @@ C++でのゲーム開発を学習中で、学習内容のアウトプットの�
 * 小惑星 : ダメージを受けます。攻撃で破壊できます。
 * レンチ : 回復します。攻撃で破壊されます。
 * 長時間生存し、小惑星を破壊し、レンチを獲得することでスコアを獲得できます。
+
+# Game Rules
+* Move with WASD and attack with the space key.
+* After 10 attacks, reloading occurs.
+* Asteroid: Takes damage and can be destroyed with attacks.
+* Wrench: Provides healing and is destroyed when attacked.
+* Earn scores by surviving for a long time, destroying asteroids, and acquiring wrenches.
+
 
 # スクリーンショット
 
