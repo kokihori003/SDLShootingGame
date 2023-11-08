@@ -9,6 +9,7 @@
 #include <vector>
 #include "SDL_ttf.h"
 #include "SDL_mixer.h"
+#include <fstream>
 
 class Game
 {
@@ -16,7 +17,7 @@ public:
 	Game();
 	bool Initialize();
 	void RunLoop();
-	void Shutdown();
+	bool Shutdown();
 
 	void AddActor(class Actor* actor);
 	void RemoveActor(class Actor* actor);
@@ -42,7 +43,7 @@ public:
 	//テキスト表示用の変数
 	SDL_Color text_color = { 255, 255, 255, 255 }; // テキストの色 (RGBA)
 	SDL_Surface* text_surface;
-	SDL_Texture* text_texture; 
+	SDL_Texture* text_texture;
 	TTF_Font* font;
 
 	void RenderUI(SDL_Renderer* renderer);
@@ -64,6 +65,14 @@ public:
 	void PlayStartReload();
 	void PlayEndReload();
 
+	void loadScoresFromFile(const std::string& fileName);
+
+	void saveScoresToFile(const std::string& fileName);
+
+	void RecordScore(int newScore);
+
+
+
 private:
 	void ProcessInput();
 	void UpdateGame();
@@ -74,9 +83,10 @@ private:
 	void ShowExplanation(SDL_Renderer* renderer, TTF_Font* font, int windowWidth, int windowHeight);
 	void ShowResult(SDL_Renderer* renderer, TTF_Font* font, int windowWidth, int windowHeight);
 	void WaitLoop();
+	bool CheckEndOrLoop();
 	void CalculateScore(float deltaTime);
-	
-	
+
+
 
 	// Map of textures loaded
 	std::unordered_map<std::string, SDL_Texture*> mTextures;
@@ -108,8 +118,8 @@ private:
 	float spawnAsteroidSpeed = 0.0f;
 	float spawnRepairItemSpeed = 0.0f;
 
-	int windowWidth=0;
-	int windowHeight=0;
+	int windowWidth = 0;
+	int windowHeight = 0;
 
 	float score = 0.0f;
 	float gameTime = 0.0f;
@@ -127,4 +137,10 @@ private:
 	Mix_Chunk* soundEffectSReload = nullptr;
 	Mix_Chunk* soundEffectEReload = nullptr;
 	Mix_Music* music = nullptr;
+
+	// 2つのベクトルを使用してランクとスコアを保持
+	//std::vector<int> ranks;
+	int ranks[4];
+	//std::vector<int> highscores;
+	int highscores[4];
 };

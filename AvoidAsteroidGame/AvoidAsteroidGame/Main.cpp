@@ -5,11 +5,24 @@
 int main(int argc, char** argv)
 {
 	Game game;
-	bool success = game.Initialize();
-	if (success)
+	bool success;
+	bool loop;
+
+	success = true;
+
+	while (success)
 	{
+		success = game.Initialize();
+		if (!success)
+		{
+			break;
+		}
 		game.RunLoop();
+		loop = game.Shutdown();
+		if (!loop)
+		{
+			break;
+		}
 	}
-	game.Shutdown();
 	return 0;
 }
