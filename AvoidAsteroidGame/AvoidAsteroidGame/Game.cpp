@@ -36,8 +36,6 @@ Game::Game()
 
 bool Game::Initialize()
 {
-	SDL_Log("Initialize");
-
 	//各種変数の初期化（繰り返しプレイする場合に備えてここに記述）
 	mWindow = nullptr;
 	mRenderer = nullptr;
@@ -112,10 +110,6 @@ bool Game::Initialize()
 
 void Game::RunLoop()
 {
-	if (mIsRunning) {
-		SDL_Log("RunLoop");
-	}
-
 	PlayGameMusic();
 	while (mIsRunning)
 	{
@@ -364,7 +358,6 @@ void Game::RemoveRepairItem(class RepairItem* rep)
 
 bool Game::Shutdown()
 {
-	SDL_Log("Shutdown");
 	UnloadData();
 	PlayResultMusic();
 	font = TTF_OpenFont(FONT_PATH, 40);
@@ -569,7 +562,7 @@ void Game::ShowResult(SDL_Renderer* renderer, TTF_Font* font, int windowWidth, i
 
 
 	font = TTF_OpenFont(FONT_PATH, 25);
-	SDL_Surface* titleTextSurface02 = TTF_RenderUTF8_Blended(font, "Press the Enter key to quit game.", textColor);
+	SDL_Surface* titleTextSurface02 = TTF_RenderUTF8_Blended(font, "Press Enter to go to the title or Esc to end the game.", textColor);
 
 	SDL_Rect titleTextRect02;
 	titleTextRect02.x = (windowWidth - titleTextSurface02->w) / 2;
@@ -583,12 +576,12 @@ void Game::ShowResult(SDL_Renderer* renderer, TTF_Font* font, int windowWidth, i
 	SDL_Surface* titleTextSurface03 = TTF_RenderUTF8_Blended(font, "high score", textColor);
 
 	SDL_Rect titleTextRect03;
-	titleTextRect03.x = (windowWidth - titleTextSurface02->w) / 2;
-	titleTextRect03.y = (windowHeight - titleTextSurface02->h) / 2;
-	titleTextRect03.w = titleTextSurface02->w;
-	titleTextRect03.h = titleTextSurface02->h;
+	titleTextRect03.x = (windowWidth - titleTextSurface03->w) / 2;
+	titleTextRect03.y = (windowHeight - titleTextSurface03->h) / 2 - 20;
+	titleTextRect03.w = titleTextSurface03->w;
+	titleTextRect03.h = titleTextSurface03->h;
 
-	SDL_RenderCopy(renderer, SDL_CreateTextureFromSurface(renderer, titleTextSurface02), NULL, &titleTextRect02);
+	SDL_RenderCopy(renderer, SDL_CreateTextureFromSurface(renderer, titleTextSurface03), NULL, &titleTextRect03);
 
 
 	// ハイスコア各行を描画
