@@ -1,24 +1,35 @@
 ﻿  Actor.cpp
-C:\Users\TIGA\Documents\GitHub\CreateGameInVisualStudio\Master\Chapter3_Game\AvoidAsteroidGame\AvoidAsteroidGame\Game.h(6,10): fatal  error C1083: include ファイルを開けません。'SDL.h':No such file or directory
   Asteroid.cpp
-C:\Users\TIGA\Documents\GitHub\CreateGameInVisualStudio\Master\Chapter3_Game\AvoidAsteroidGame\AvoidAsteroidGame\SpriteComponent.h(6,10): fatal  error C1083: include ファイルを開けません。'SDL.h':No such file or directory
   BGSpriteComponent.cpp
-C:\Users\TIGA\Documents\GitHub\CreateGameInVisualStudio\Master\Chapter3_Game\AvoidAsteroidGame\AvoidAsteroidGame\SpriteComponent.h(6,10): fatal  error C1083: include ファイルを開けません。'SDL.h':No such file or directory
   CircleComponent.cpp
   Component.cpp
   Game.cpp
-C:\Users\TIGA\Documents\GitHub\CreateGameInVisualStudio\Master\Chapter3_Game\AvoidAsteroidGame\AvoidAsteroidGame\Game.h(6,10): fatal  error C1083: include ファイルを開けません。'SDL.h':No such file or directory
+C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\AvoidAsteroidGame\Ship.h(53,18): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\AvoidAsteroidGame\Game.cpp(508,11): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\AvoidAsteroidGame\Game.cpp(917,16): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
   InputComponent.cpp
   Laser.cpp
-C:\Users\TIGA\Documents\GitHub\CreateGameInVisualStudio\Master\Chapter3_Game\AvoidAsteroidGame\AvoidAsteroidGame\SpriteComponent.h(6,10): fatal  error C1083: include ファイルを開けません。'SDL.h':No such file or directory
   Main.cpp
-C:\Users\TIGA\Documents\GitHub\CreateGameInVisualStudio\Master\Chapter3_Game\AvoidAsteroidGame\AvoidAsteroidGame\Game.h(6,10): fatal  error C1083: include ファイルを開けません。'SDL.h':No such file or directory
   Math.cpp
   MoveComponent.cpp
   Random.cpp
   RepairItem.cpp
-C:\Users\TIGA\Documents\GitHub\CreateGameInVisualStudio\Master\Chapter3_Game\AvoidAsteroidGame\AvoidAsteroidGame\SpriteComponent.h(6,10): fatal  error C1083: include ファイルを開けません。'SDL.h':No such file or directory
   Ship.cpp
-C:\Users\TIGA\Documents\GitHub\CreateGameInVisualStudio\Master\Chapter3_Game\AvoidAsteroidGame\AvoidAsteroidGame\Ship.h(5,10): fatal  error C1083: include ファイルを開けません。'SDL.h':No such file or directory
+C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\AvoidAsteroidGame\Ship.h(53,18): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\AvoidAsteroidGame\Ship.cpp(72,12): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\AvoidAsteroidGame\Ship.cpp(116,15): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
   SpriteComponent.cpp
-C:\Users\TIGA\Documents\GitHub\CreateGameInVisualStudio\Master\Chapter3_Game\AvoidAsteroidGame\AvoidAsteroidGame\SpriteComponent.h(6,10): fatal  error C1083: include ファイルを開けません。'SDL.h':No such file or directory
+  コード生成しています。
+  Previous IPDB not found, fall back to full compilation.
+C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\AvoidAsteroidGame\Game.cpp(653): warning C4715: 'Game::CheckEndOrLoop': 値を返さないコントロール パスがあります。
+  All 1364 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  コード生成が終了しました。
+  AvoidAsteroidGame.vcxproj -> C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\x64\Release\AvoidAsteroidGame.exe
+  C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\External\SDL2-2.28.3\lib\x64\SDL2.dll
+  1 個のファイルをコピーしました
+  C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\External\SDL2_image-2.6.3\lib\x64\SDL2_image.dll
+  1 個のファイルをコピーしました
+  C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\External\SDL2_ttf-2.20.2\lib\x64\SDL2_ttf.dll
+  1 個のファイルをコピーしました
+  C:\Users\TIGA\Documents\GitHub\ShootingGameforSDL\AvoidAsteroidGame\External\SDL2_mixer-2.6.3\lib\x64\SDL2_mixer.dll
+  1 個のファイルをコピーしました
